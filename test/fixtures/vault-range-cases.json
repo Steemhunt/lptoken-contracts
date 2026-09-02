@@ -1,0 +1,31 @@
+{
+  "_comment": "Boundary ticks VaultRange derives for a (tickSpacing, budget0, budget1) triple. Asserted by test/VaultRange.t.sol against the library and by the lptoken.fun web application's TypeScript port, so the launch planner and the Factory can never disagree about the range a pool will get. Budgets are quoted so large values survive JSON parsing.",
+  "tickSpacing": [200, 200, 60, 60, 60, 10, 10, 1, 200],
+  "budget0": [
+    "1000000000000000000000000",
+    "1000000000000000000000000",
+    "1000000000000000000000000",
+    "10000000000000000",
+    "1000000000000000000000000",
+    "958491981183687141099211614720",
+    "1",
+    "1000000000000000000000000",
+    "1000000000000000000000000"
+  ],
+  "budget1": [
+    "10000000000000000000000000000",
+    "10000000000000000000000000000000000",
+    "10000000000000000000000000000",
+    "10000000000000000000000000000",
+    "10000000000000000000000000000000000",
+    "10000000000000000000000000000",
+    "1",
+    "10000000000000000000000000000",
+    "1"
+  ],
+  "tickLower": [-210800, 65400, -162900, -162900, 113460, -91260, -887270, 844, -887200],
+  "tickUpper": [395200, 395200, 347100, 715500, 347100, -10, 887270, 183372, 395200],
+  "unprotectableTickSpacing": [10],
+  "unprotectableBudget0": ["10000000000000000000000000000000"],
+  "unprotectableBudget1": ["10000000000000000000000000000000"]
+}

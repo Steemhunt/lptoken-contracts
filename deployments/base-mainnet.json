@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 2,
+  "network": "base-mainnet",
+  "chainId": 8453,
+  "explorer": "https://basescan.org",
+  "sourceCommit": "a47972337dbf94d99d47da9ce8b1e1008a4b0877",
+  "sourceDependencies": {
+    "openzeppelinContracts": "5fd1781b1454fd1ef8e722282f86f9293cacf256",
+    "uniswapV4Core": "59d3ecf53afa9264a16bba0e38f4c5d2231f80bc",
+    "uniswapV4Periphery": "545a5d2a87228167edde48f3b9eda122d1e3c4d6"
+  },
+  "build": {
+    "solcVersion": "0.8.36+commit.8a079791",
+    "evmVersion": "cancun",
+    "viaIR": true,
+    "optimizer": true,
+    "optimizerRuns": 20000,
+    "metadataBytecodeHash": "none"
+  },
+  "deploymentBlock": 50379614,
+  "deployer": "0x32A935f79ce498aeFF77Acd2F7f35B3aAbC31a2D",
+  "finalFactoryOwner": "0x11113Ab597F0221a5e32c0B23289ad9b4A00b100",
+  "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F",
+  "dependencies": {
+    "poolManager": {
+      "address": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+      "runtimeCodeHash": "0x83b2af6e9f3158defc2811cbcb0db71ecf8b2ba2abea39c39e370ac5c6f43eb6"
+    },
+    "stateView": {
+      "address": "0xA3c0c9b65baD0b08107Aa264b0f3dB444b867A71",
+      "runtimeCodeHash": "0xbbd5859677ef5491143133e8ed2b8faa0272f6fc2cbae94c53e79cc8c0538545"
+    },
+    "v4Quoter": {
+      "address": "0x0d5e0F971ED27FBfF6c2837bf31316121532048D",
+      "runtimeCodeHash": "0x9a5c0cdd56325bef0e48cdab071a4b6a7f877e1271c2e08510998d724a038bb3"
+    },
+    "permit2": {
+      "address": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+      "runtimeCodeHash": "0xa67739abc3ede9dbdc0491636c67d6a14ac07fab9030c3f509b1eb7b11dff8ed"
+    },
+    "canonicalStable": {
+      "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "runtimeCodeHash": "0xa6705a10bb756b5dea144591118be77d7af0c3eee3bf2dfe2583dcb0364fefab"
+    },
+    "wrappedNative": {
+      "address": "0x4200000000000000000000000000000000000006",
+      "runtimeCodeHash": "0x8a3a1f6a9f9dce633117adee5b458245835a8645a8c8726a26382a4622508b1c"
+    }
+  },
+  "webInfrastructure": {
+    "universalRouterV2_1_1": {
+      "address": "0xfdf682f51fe81aa4898f0ae2163d8a55c127fbc7",
+      "runtimeCodeHash": "0x4436f45787722467059726381c27a999d0725a7a8b6ae2c4217223987275e3ef"
+    },
+    "multicall3": {
+      "address": "0xcA11bde05977b3631167028862bE2a173976CA11",
+      "runtimeCodeHash": "0xd5c15df687b16f2ff992fc8d767b4216323184a2bbc6ee2f9c398c318e770891"
+    },
+    "reviewedWethStablePool": {
+      "poolId": "0x1d8c55f347727c0fb4f5e1b65cdb93639e0c7102580a7d345e1144cd5a718f54",
+      "currency0": "0x4200000000000000000000000000000000000006",
+      "currency1": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "fee": 3000,
+      "tickSpacing": 60,
+      "hooks": "0x0000000000000000000000000000000000000000",
+      "reviewBlock": 50380122,
+      "activeLiquidity": "25577349791041577"
+    }
+  },
+  "protocolConstants": {
+    "factory": {
+      "minimumPoolLpFeePips": 2000
+    },
+    "vault": {
+      "deadShares": "1000000",
+      "shareFeeBps": 30,
+      "minimumFeeableShares": "334",
+      "bps": 10000,
+      "compoundIntervalSeconds": 600,
+      "compoundSafetyBps": 5000,
+      "deadShareReceiver": "0x000000000000000000000000000000000000dEaD",
+      "positionSalt": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "launch": {
+      "tokenSupply": "1000000000000000000000000000",
+      "initialFdvNativeWei": "2519992110970981223",
+      "initialLpQuoteWei": "1000000000000000",
+      "lpFeePips": 10000,
+      "tickSpacing": 200,
+      "startTick": 198000,
+      "launchTickLower": -887200,
+      "launchTickUpper": 198000,
+      "vaultTickLower": -210800,
+      "vaultTickUpper": 395200,
+      "initialSqrtPriceX96": "1578265245468595147975671034250002",
+      "bootstrapTargetAmount": "396847373111701892301539",
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "hooks": "0xED14eE7501fB212f876714a68308564cD6772000",
+      "deadReceiver": "0x000000000000000000000000000000000000dEaD",
+      "positionSalt": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "feeSplitDenominator": 5,
+      "targetCreatorUnits": 2,
+      "targetNavUnits": 3,
+      "counterCreatorUnits": 2,
+      "counterNavUnits": 1,
+      "counterProtocolUnits": 2,
+      "splitRemainderCarry": true,
+      "tokenMetadata": {
+        "nameMinimumUtf8Bytes": 2,
+        "nameMaximumUtf8Bytes": 48,
+        "symbolMinimumUtf8Bytes": 2,
+        "symbolMaximumUtf8Bytes": 10,
+        "urlMaximumUtf8Bytes": 2048,
+        "twitterHandleMaximumBytes": 15,
+        "telegramHandleMaximumBytes": 32
+      }
+    },
+    "launchLiquidityVault": {
+      "nativePayoutGas": 30000
+    },
+    "zapRouter": {
+      "maximumRouteHops": 3
+    }
+  },
+  "contracts": {
+    "lpTokenFactory": {
+      "address": "0x3384eD0d272dE35bF6DC516E1eA7d188CEb51793",
+      "runtimeCodeHash": "0x6180abeee240bf6795d75b1a53c79e5afd756ac027d49acde97c5e202223e39c",
+      "creationTransactionHash": "0x8fcb714cf8f054dd9eb3471aebaaf4e864ab431ae7cd214a3ec9fd1ec9c3b7eb",
+      "creationBlock": 50379614,
+      "constructorArguments": {
+        "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+        "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F",
+        "initialOwner": "0x32A935f79ce498aeFF77Acd2F7f35B3aAbC31a2D"
+      }
+    },
+    "lpTokenVaultImplementation": {
+      "address": "0x78aae2fD8f8b09994d0e936Ce4478a7EB8FE92D9",
+      "runtimeCodeHash": "0xd6ade71b244cd901d01e7f357b008a53f7b1e7fdfe47f6885abb57798415f425",
+      "creationTransactionHash": "0x8fcb714cf8f054dd9eb3471aebaaf4e864ab431ae7cd214a3ec9fd1ec9c3b7eb",
+      "creationBlock": 50379614,
+      "creationKind": "internal",
+      "constructorArguments": {
+        "factory": "0x3384eD0d272dE35bF6DC516E1eA7d188CEb51793",
+        "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b"
+      }
+    },
+    "tokenLaunchpad": {
+      "address": "0xED14eE7501fB212f876714a68308564cD6772000",
+      "runtimeCodeHash": "0x93d4ddba49d4d1a5065a77253f6248c37d0aef6caba8acd7baa149f6fdcd4024",
+      "creationTransactionHash": "0xa3e6051869eac3c82aebe9dc1af32fd10a77aab0a6786006bb9fa82bdae32727",
+      "creationBlock": 50379615,
+      "creationKind": "create2",
+      "constructorArguments": {
+        "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+        "factory": "0x3384eD0d272dE35bF6DC516E1eA7d188CEb51793",
+        "startTick": 198000,
+        "initialLpQuoteWei": "1000000000000000"
+      }
+    },
+    "launchLiquidityVault": {
+      "address": "0x39f3C534E6962Fd5fb0DD3653B6c16400c49C498",
+      "runtimeCodeHash": "0xdf78e3ac2eea19d1bdc47a7e8ef02f0021e2cae935adf523372bd552707367a1",
+      "creationTransactionHash": "0xa3e6051869eac3c82aebe9dc1af32fd10a77aab0a6786006bb9fa82bdae32727",
+      "creationBlock": 50379615,
+      "creationKind": "internal",
+      "constructorArguments": {
+        "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+        "launchpad": "0xED14eE7501fB212f876714a68308564cD6772000",
+        "factory": "0x3384eD0d272dE35bF6DC516E1eA7d188CEb51793"
+      }
+    },
+    "zapRouter": {
+      "address": "0xc4C8071D651F093C4A5c2C06e7BFfc163A057DdA",
+      "runtimeCodeHash": "0x1bd5c2dd4f519368ed137e5099ec5a8d25430e67ae4369691ffb1de282d74e7f",
+      "creationTransactionHash": "0x3b4178438b43282f09576f743850dfeeedaa87ef068e62fed9a8466a086d8c10",
+      "creationBlock": 50507564,
+      "sourceCommit": "e00a49502b2b6e45b583141273e820e55a3997f6",
+      "sourceDependencies": {
+        "openzeppelinContracts": "5fd1781b1454fd1ef8e722282f86f9293cacf256",
+        "uniswapV4Core": "59d3ecf53afa9264a16bba0e38f4c5d2231f80bc",
+        "uniswapV4Periphery": "545a5d2a87228167edde48f3b9eda122d1e3c4d6"
+      },
+      "constructorArguments": {
+        "factory": "0x3384eD0d272dE35bF6DC516E1eA7d188CEb51793",
+        "canonicalStable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "wrappedNative": "0x4200000000000000000000000000000000000006"
+      }
+    },
+    "lpTokenLens": {
+      "address": "0x6DC57E44B995c56F91a6AD5f221F372C1c2FFBF5",
+      "runtimeCodeHash": "0x23f3b5cad1a697620df4b5b520d9e037c321eca90322c8c1a049ef1ad2add5ef",
+      "creationTransactionHash": "0x7175460ebd822f41f0bcb0d21259759e7b69dd25808d849db0b6d2e569945c4f",
+      "creationBlock": 50379618,
+      "constructorArguments": {}
+    }
+  },
+  "contractHistory": {
+    "zapRouters": [
+      {
+        "address": "0xFC3304e5D4AB166aA91A52E91B85f1804a7feAB8",
+        "runtimeCodeHash": "0x3d677bf5f73c8da138f84035b6741d7a385beaeda90fdfc9b06d630df6d2d9cd",
+        "creationTransactionHash": "0x2a4ecb3afa1f849dcd3a4e439a3576a3c4f97f4212c407e20dbaec443fc95171",
+        "creationBlock": 50379617,
+        "sourceCommit": "a47972337dbf94d99d47da9ce8b1e1008a4b0877",
+        "sourceDependencies": {
+          "openzeppelinContracts": "5fd1781b1454fd1ef8e722282f86f9293cacf256",
+          "uniswapV4Core": "59d3ecf53afa9264a16bba0e38f4c5d2231f80bc",
+          "uniswapV4Periphery": "545a5d2a87228167edde48f3b9eda122d1e3c4d6"
+        },
+        "constructorArguments": {
+          "factory": "0x3384eD0d272dE35bF6DC516E1eA7d188CEb51793",
+          "canonicalStable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "wrappedNative": "0x4200000000000000000000000000000000000006"
+        },
+        "verifiedWiring": {
+          "factory": "0x3384eD0d272dE35bF6DC516E1eA7d188CEb51793",
+          "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+          "canonicalStable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+          "wrappedNative": "0x4200000000000000000000000000000000000006"
+        }
+      }
+    ]
+  },
+  "configurationTransactions": {
+    "bindLaunchpad": {
+      "transactionHash": "0x7e895de84c37957c06a777ee4719272bbded3d254243f0702a36d11892c0dd4b",
+      "block": 50379616,
+      "factory": "0x3384eD0d272dE35bF6DC516E1eA7d188CEb51793",
+      "launchpad": "0xED14eE7501fB212f876714a68308564cD6772000"
+    },
+    "transferFactoryOwnership": {
+      "transactionHash": "0xafa28936135088e35a89bc3833b4ec20e81a825ffb22f28d0509eed0814fc06e",
+      "block": 50379619,
+      "previousOwner": "0x32A935f79ce498aeFF77Acd2F7f35B3aAbC31a2D",
+      "newOwner": "0x11113Ab597F0221a5e32c0B23289ad9b4A00b100"
+    }
+  },
+  "verifiedWiring": {
+    "factory": {
+      "owner": "0x11113Ab597F0221a5e32c0B23289ad9b4A00b100",
+      "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F",
+      "pendingTreasury": "0x0000000000000000000000000000000000000000",
+      "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+      "vaultImplementation": "0x78aae2fD8f8b09994d0e936Ce4478a7EB8FE92D9",
+      "launchpad": "0xED14eE7501fB212f876714a68308564cD6772000"
+    },
+    "lpTokenVaultImplementation": {
+      "factory": "0x3384eD0d272dE35bF6DC516E1eA7d188CEb51793",
+      "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+      "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F",
+      "permit2": "0x000000000022D473030F116dDEE9F6B43aC78BA3"
+    },
+    "tokenLaunchpad": {
+      "factory": "0x3384eD0d272dE35bF6DC516E1eA7d188CEb51793",
+      "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+      "liquidityVault": "0x39f3C534E6962Fd5fb0DD3653B6c16400c49C498",
+      "startTick": 198000,
+      "initialLpQuoteWei": "1000000000000000",
+      "bootstrapTargetAmount": "396847373111701892301539",
+      "initialFdvNativeWei": "2519992110970981223"
+    },
+    "launchLiquidityVault": {
+      "launchpad": "0xED14eE7501fB212f876714a68308564cD6772000",
+      "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+      "factory": "0x3384eD0d272dE35bF6DC516E1eA7d188CEb51793",
+      "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F"
+    },
+    "zapRouter": {
+      "version": "2.0",
+      "factory": "0x3384eD0d272dE35bF6DC516E1eA7d188CEb51793",
+      "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+      "canonicalStable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+      "wrappedNative": "0x4200000000000000000000000000000000000006"
+    }
+  },
+  "receiptSummary": {
+    "transactionCount": 6,
+    "allSucceeded": true,
+    "totalGasUsed": "21352558",
+    "totalPaidWei": "120108160102558"
+  }
+}

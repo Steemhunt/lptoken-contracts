@@ -1,0 +1,26 @@
+{
+  "chainId": 4663,
+  "rpcUrl": "https://robinhood-rpc.publicnode.com",
+  "explorerUrl": "https://robinhoodchain.blockscout.com",
+  "addresses": {
+    "poolManager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+    "stateView": "0xf3334192d15450cdd385c8b70e03f9a6bd9e673b",
+    "v4Quoter": "0x8dc178efb8111bb0973dd9d722ebeff267c98f94",
+    "permit2": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+    "canonicalStable": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+    "wrappedNative": "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+    "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F"
+  },
+  "launchTerms": {
+    "startTick": 198000,
+    "initialLpQuoteWei": "1000000000000000"
+  },
+  "runtimeCodeHashes": {
+    "poolManager": "0xbd3881180b547f5fe817545743cfb4343e96b1bc6640dcd70c106b0066e95626",
+    "stateView": "0x7d9c591e0956fd89d98feb4ffcfe8bf1f7a62bd485edd979fa21d104b49878a6",
+    "v4Quoter": "0xd707b1da8cb165e5ea35a3b4450d971eb562ec171e23492aa117036b78a868f6",
+    "permit2": "0x5208783f52488f7d3493e5e38311ab707c1d75457fe472a19b0b4d57d66a7fca",
+    "canonicalStable": "0x864cc9ad53b338b82da1f7cab85ab0b3d5c8861acb422b6fec63cf36234f36a6",
+    "wrappedNative": "0x5706be52f64875fee65a2cec0d80e47a23d8793cbe85d214b48445e2d05f5353"
+  }
+}

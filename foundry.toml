@@ -1,0 +1,54 @@
+[profile.default]
+src = "src"
+test = "test"
+script = "script"
+out = "out"
+libs = ["lib"]
+auto_detect_solc = true
+evm_version = "cancun"
+optimizer = true
+optimizer_runs = 20_000
+via_ir = true
+bytecode_hash = "none"
+fs_permissions = [
+    { access = "read", path = "./out" },
+    { access = "read", path = "./config" },
+    { access = "read", path = "./test/fixtures" },
+    { access = "write", path = "./deployments" },
+]
+
+additional_compiler_profiles = [
+    { name = "pool_manager", via_ir = true, optimizer_runs = 44_444_444 },
+]
+
+compilation_restrictions = [
+    { paths = "src/**", version = "=0.8.36" },
+    { paths = "script/**", version = "=0.8.36" },
+    { paths = "test/*.t.sol", version = "=0.8.36" },
+    { paths = "test/invariant/**", version = "=0.8.36" },
+    { paths = "test/utils/**", version = "=0.8.36" },
+    { paths = "test/mocks/**", version = "=0.8.36" },
+    { paths = "test/artifacts/PoolManagerArtifact.sol", version = "=0.8.26", optimizer_runs = 44_444_444 },
+    { paths = "lib/v4-core/src/PoolManager.sol", version = "=0.8.26", optimizer_runs = 44_444_444 },
+]
+
+[profile.production]
+skip = ["test/**"]
+
+[fuzz]
+runs = 1_000
+
+[invariant]
+runs = 256
+depth = 128
+fail_on_revert = true
+
+[fmt]
+line_length = 100
+tab_width = 4
+bracket_spacing = true
+
+[lint]
+# The namespace hash favors readable ABI encoding over hand-written assembly.
+# Deployment config reads are an intentional Foundry script capability.
+exclude_lints = ["screaming-snake-case-immutable", "asm-keccak256", "unsafe-cheatcode"]

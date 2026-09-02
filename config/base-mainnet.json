@@ -1,0 +1,26 @@
+{
+  "chainId": 8453,
+  "rpcUrl": "https://mainnet.base.org",
+  "explorerUrl": "https://basescan.org",
+  "addresses": {
+    "poolManager": "0x498581fF718922c3f8e6A244956aF099B2652b2b",
+    "stateView": "0xA3c0c9b65baD0b08107Aa264b0f3dB444b867A71",
+    "v4Quoter": "0x0d5e0F971ED27FBfF6c2837bf31316121532048D",
+    "permit2": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+    "canonicalStable": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "wrappedNative": "0x4200000000000000000000000000000000000006",
+    "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F"
+  },
+  "launchTerms": {
+    "startTick": 198000,
+    "initialLpQuoteWei": "1000000000000000"
+  },
+  "runtimeCodeHashes": {
+    "poolManager": "0x83b2af6e9f3158defc2811cbcb0db71ecf8b2ba2abea39c39e370ac5c6f43eb6",
+    "stateView": "0xbbd5859677ef5491143133e8ed2b8faa0272f6fc2cbae94c53e79cc8c0538545",
+    "v4Quoter": "0x9a5c0cdd56325bef0e48cdab071a4b6a7f877e1271c2e08510998d724a038bb3",
+    "permit2": "0xa67739abc3ede9dbdc0491636c67d6a14ac07fab9030c3f509b1eb7b11dff8ed",
+    "canonicalStable": "0xa6705a10bb756b5dea144591118be77d7af0c3eee3bf2dfe2583dcb0364fefab",
+    "wrappedNative": "0x8a3a1f6a9f9dce633117adee5b458245835a8645a8c8726a26382a4622508b1c"
+  }
+}

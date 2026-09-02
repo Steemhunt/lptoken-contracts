@@ -1,0 +1,32 @@
+# Deployments
+
+Deployment manifests are written only after receipt and runtime-wiring
+validation. No production manifest exists until the replacement deployment has
+been broadcast and reviewed. A production manifest must contain
+chain ID, transaction hashes,
+confirmed addresses, deployment blocks, constructor arguments, source commits,
+runtime code hashes, and every immutable protocol constant. The confirmed
+address set is `LpTokenFactory`, its vault implementation, `TokenLaunchpad`,
+the shared `LaunchLiquidityVault`, `ZapRouter`, and `LpTokenLens`.
+The manifest must also record the deployment signer, requested final Factory
+owner, ownership-transfer transaction, and confirmed `factory.owner()` value.
+
+Receipt validation must also confirm the initial Factory treasury and empty
+pending treasury, the one-time Factory-to-Launchpad binding,
+the Launchpad's Factory, PoolManager, and shared-vault immutables, the shared
+vault's Launchpad, PoolManager, and Factory-derived treasury, and ZapRouter's
+Factory, PoolManager, canonical stablecoin, and wrapped-native immutables. Web and
+indexer configuration must use the corresponding receipt-backed addresses and
+runtime hashes; guessed or zero values are not deployment manifests.
+
+Schema version 2 keeps `contracts` as the current canonical address set and
+records replaced deployments under `contractHistory`. A replacement contract
+entry records its own source commit and dependency pins when they differ from
+the initial deployment's top-level provenance. `receiptSummary` continues to
+describe the initial protocol deployment; each replacement's confirmed receipt
+is recorded on its current contract entry, while the retired entry retains its
+original receipt.
+
+The checked-in mainnet configs pin the approved initial treasury and reviewed chain
+dependencies. Each deployment must produce a chain-specific manifest from its confirmed
+receipts.
