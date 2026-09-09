@@ -12,8 +12,9 @@ pro-rata claim on the position plus accrued fees, and a permissionless `compound
 folds trading fees back into liquidity. Holding `lpCASHCAT` is holding the
 CASHCAT/ETH pool itself — a way to go long a token's *volume*, not just its price.
 
-Live at **[lptoken.fun](https://lptoken.fun)** on [Base](#deployments) and
-[Robinhood Chain](#deployments).
+Live at **[lptoken.fun](https://lptoken.fun)**. Contract deployments are available on
+[Base](#base-8453), [Robinhood Chain](#robinhood-chain-4663), and
+[Arc mainnet](#arc-mainnet-5042).
 
 ## How it works
 
@@ -88,6 +89,11 @@ with **no oracle, USD numeraire, or pool-wide reserve assumption anywhere**.
   canonical stablecoin through at most three client-selected hookless v4 pools, then
   splits into the vault pair. Strict full-spend per hop, per-leg minimums, deadlines,
   callback authentication. No V3, no external aggregator calldata.
+- `ZapRouterArc` — standalone Arc periphery for native USDC (18 decimals) and its
+  ERC-20 interface (6 decimals). Both views share one balance: conversion changes
+  units by `10^12`, without WETH `deposit()` / `withdraw()` calls. The router refunds
+  conversion dust, preserves its pre-call balance, and rejects pools that pair the
+  two USDC interfaces. The existing `ZapRouter` source remains unchanged.
 - `LpTokenLens` — read-only aggregation of vault identity, pool context, and
   shareholder accounting (kept separate, so pool state is never presented as a
   claim).
@@ -104,7 +110,7 @@ with **no oracle, USD numeraire, or pool-wide reserve assumption anywhere**.
   round-trip manipulation strictly loses; admission snapshots are re-checked after
   bootstrap transfers so callback-capable assets cannot invalidate them; forced ETH
   and direct donations accrue to existing holders and can never mint shares.
-- **Adversarial test suite** — 304 non-fork tests plus mainnet-fork dry runs against
+- **Adversarial test suite** — 333 non-fork tests plus mainnet-fork dry runs against
   the production `PoolManager` artifact (compiled with Uniswap's optimizer profile,
   not a mock). Highlights: `CompoundCapInsiderAttack` proves a launch creator armed
   with JIT liquidity and 1.1×–10,000× price swings loses on every round trip;
@@ -142,6 +148,42 @@ runtime code hashes live in [`deployments/`](deployments).
 | ZapRouter | [`0xc4C8071D651F093C4A5c2C06e7BFfc163A057DdA`](https://basescan.org/address/0xc4C8071D651F093C4A5c2C06e7BFfc163A057DdA) |
 | LpTokenLens | [`0x6DC57E44B995c56F91a6AD5f221F372C1c2FFBF5`](https://basescan.org/address/0x6DC57E44B995c56F91a6AD5f221F372C1c2FFBF5) |
 
+### Arc mainnet (5042)
+
+Deployed on September 9, 2026. The [Arc manifest](deployments/arc-mainnet.json)
+records six successful transactions, constructor arguments, dependency and runtime
+hashes, ownership and treasury wiring, and exact source SHA-256 hashes.
+
+| Contract | Address |
+| --- | --- |
+| LpTokenFactory | [`0x37F540de37afE8bDf6C722d87CB019F30e5E406a`](https://arc-scan.org/address/0x37F540de37afE8bDf6C722d87CB019F30e5E406a) |
+| LpTokenVault implementation | [`0x2c692DB9203EF651745AF2c07ebd587222D55a06`](https://arc-scan.org/address/0x2c692DB9203EF651745AF2c07ebd587222D55a06) |
+| TokenLaunchpad | [`0xa790B0e77FD23504342404fc8DD0c5AE4DE4e000`](https://arc-scan.org/address/0xa790B0e77FD23504342404fc8DD0c5AE4DE4e000) |
+| LaunchLiquidityVault | [`0x124ed8F31A4052cA910E98e5eC9bb182C88AB365`](https://arc-scan.org/address/0x124ed8F31A4052cA910E98e5eC9bb182C88AB365) |
+| ZapRouterArc | [`0x905F3AE86108c6A3b1a345dACEaef6c4749Ec66a`](https://arc-scan.org/address/0x905F3AE86108c6A3b1a345dACEaef6c4749Ec66a) |
+| LpTokenLens | [`0x5dfA75b0185efBaEF286E80B847ce84ff8a62C2d`](https://arc-scan.org/address/0x5dfA75b0185efBaEF286E80B847ce84ff8a62C2d) |
+
+- **Pool quote:** native USDC, `address(0)`, 18 decimals. The ERC-20 interface at
+  `0x3600000000000000000000000000000000000000` uses 6 decimals and exposes the same
+  underlying balance; it is not an additional asset or a WETH-style wrapper.
+- **Launch terms:** 1 USDC permanent seed per token launch; start tick `122000`;
+  initial FDV approximately $5,033.52; 1% pool fee and tick spacing 200. Deployment
+  itself funded no token seed.
+- **Deployment cost:** 21,581,930 gas, totaling **0.4316386 USDC** across six
+  transactions. Foundry's generic native-currency output may label these amounts
+  as ETH; the denomination on Arc is USDC.
+- **Validation:** 18 Arc Zap tests and 11 deployment/launch tests cover shared-balance
+  conversion, dust, slippage rollback, native/ERC-20 mint and redeem, and the launch
+  lifecycle. The USDC fixture models shared balances, not Arc's exact precompile
+  execution or gas behavior. Local results do not establish a completed mainnet
+  trading round trip.
+
+The [Arc config](config/arc-mainnet.json) and
+[deployment script](script/DeployLpTokenArc.s.sol) record the executed deployment.
+The config pins the original signer at nonce zero and must not be reused to repeat
+this production deployment. The shared core contracts and legacy `ZapRouter`
+retain their existing source references.
+
 ## Getting started
 
 ```sh
@@ -149,7 +191,7 @@ git clone --recursive https://github.com/Steemhunt/lptoken-contracts.git
 cd lptoken-contracts
 
 forge build
-./test/test-all.sh        # 304 non-fork tests
+./test/test-all.sh        # 333 non-fork tests
 forge fmt --check
 ```
 
@@ -183,7 +225,9 @@ src/interfaces/                 core and launch fee-source interfaces
 src/libraries/                  launch config, vault range, currency helpers
 src/periphery/LpTokenLens.sol   read-only aggregation
 src/periphery/ZapRouter.sol     restricted v4 zap routing
+src/periphery/ZapRouterArc.sol  Arc shared-USDC zap routing
 script/DeployLpToken.s.sol      full deployment + wiring validation
+script/DeployLpTokenArc.s.sol   executed Arc deployment + preflight validation
 config/                         per-chain deployment inputs
 deployments/                    receipt-backed deployment manifests
 test/                           unit, invariant, simulation, and fork suites

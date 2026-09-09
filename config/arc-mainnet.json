@@ -1,0 +1,38 @@
+{
+  "chainId": 5042,
+  "rpcUrlEnv": "ARC_RPC_URL",
+  "explorerUrl": "https://arc-scan.org",
+  "deployerNonce": 0,
+  "addresses": {
+    "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+    "stateView": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+    "v4Quoter": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+    "positionManager": "0x6049c9a0e26405C0985f9E3685C87d0aE917f82B",
+    "universalRouter": "0x4fcA4a51Ab4F23A7447b3284fBd7D73289A89Fb1",
+    "permit2": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+    "canonicalStable": "0x3600000000000000000000000000000000000000",
+    "create2Deployer": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F",
+    "factoryOwner": "0x11113Ab597F0221a5e32c0B23289ad9b4A00b100",
+    "deployer": "0x32A935f79ce498aeFF77Acd2F7f35B3aAbC31a2D"
+  },
+  "launchTerms": {
+    "startTick": 122000,
+    "initialLpQuoteWei": "1000000000000000000"
+  },
+  "usdcProxy": {
+    "implementation": "0xC6AD664ac6679F4Ce74e10E91449C93Ec1ae3cA6",
+    "admin": "0x9005E53E3ee2f27999F15e7a52C58f804Fc716e0"
+  },
+  "runtimeCodeHashes": {
+    "poolManager": "0xbd3881180b547f5fe817545743cfb4343e96b1bc6640dcd70c106b0066e95626",
+    "stateView": "0x7d9c591e0956fd89d98feb4ffcfe8bf1f7a62bd485edd979fa21d104b49878a6",
+    "v4Quoter": "0xd707b1da8cb165e5ea35a3b4450d971eb562ec171e23492aa117036b78a868f6",
+    "positionManager": "0x5904204586f0290499c357cfcb99489cdc13740b3cd3f26c735f7ef7f2cff1c5",
+    "universalRouter": "0x7f949fe75d3483670e17a9ab398a3dc71f285026bba755b48fffd1e42aefad71",
+    "permit2": "0x05a793d6bdba8b8715c8f4cef0725ec3a961f567d33ebb2d360f541f19f70c8f",
+    "canonicalStable": "0xc9987bd3af6b26a030951faa7eacc017b68343aeedf3ce5fe68f821c4b93939d",
+    "create2Deployer": "0x2fa86add0aed31f33a762c9d88e807c475bd51d0f52bd0955754b2608f7e4989",
+    "usdcImplementation": "0x237a5899a4c4e1c8b60fe7626371778ce8ef0a554350cd92cdf8ae393f59966f"
+  }
+}

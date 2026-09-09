@@ -1,0 +1,412 @@
+{
+  "schemaVersion": 2,
+  "network": "arc-mainnet",
+  "chainId": 5042,
+  "explorer": "https://arc-scan.org",
+  "sourceCommit": null,
+  "baseSourceCommit": "9ed92f2d61edf9b37c292e3232ac7162d83fae0d",
+  "sourceSha256": {
+    "src/ERC20PermitBase.sol": "bbb1af73ecf7e512a97e44776ac310223c76a870ef769f0dc8e90349bde0a647",
+    "src/LaunchLiquidityVault.sol": "56a5a4fabb66bbe6f727216f024a0c8e754ce668694652141f004d91ecb3e694",
+    "src/LaunchToken.sol": "58bc4014f91d0d00422402389fc8d3ac328a8455fa83e8b532876b2278cf47ad",
+    "src/LpTokenFactory.sol": "7537bbab45dcc82dd71610064b6b7ef5fad82b539ac5620df98b86a386537c79",
+    "src/LpTokenVault.sol": "dba15bbc3222e2239551a36cca65be8a8fae530af9e829f0510438cc48f3d1a0",
+    "src/TokenLaunchpad.sol": "22a2d9aa766382dc871e7bbb06cca069aef06139f091c6cc652c084086353c42",
+    "src/interfaces/ILaunchFeeSource.sol": "760b8c812472fdb7c4d2322b99714cdf4b3d0d1d0268a1e24d473416edea095b",
+    "src/interfaces/ILpTokenFactory.sol": "504b7581a162040143cafe9dbf1152a07f35cd5321ce708e4b689635d8f33bb1",
+    "src/interfaces/ILpTokenVault.sol": "e8d56377ff9edd6f8f706867bb17e6c8e0c4adddc93879c456fa26ff7e0d42af",
+    "src/interfaces/ITokenLaunchpad.sol": "d7e1b2e46283917a23a466227d54cd4c32ea8b59b8bb40b3c298f3a7dc25d4c1",
+    "src/libraries/CurrencyTransfer.sol": "4fecedfc4940fe65bacee2a61af54510c7dd629ea7473c79c1f4045319337522",
+    "src/libraries/LaunchPoolConfig.sol": "581a2c2d63a4b4da29560f8a8718989bd14ba2b5670a508a091eb60eba5b5f7e",
+    "src/libraries/TokenMetadata.sol": "e492974dd13d36aec376aa7adbcbae4245e0bea4fda871c0e01f2b60065746dd",
+    "src/libraries/VaultRange.sol": "37e162809daa1c6d191a969008a11f72e9149ed648dfff3c0014e220766801c8",
+    "src/periphery/LpTokenLens.sol": "f69ef6dcd10cec05d031d2a7964937a2ed44ef84a1158aafea6328a86585fe88",
+    "src/periphery/ZapRouter.sol": "0cd5819c3348ab93fec7f1d9cd0deca8c5bdbd033aa7e7ceb269824c13245ad1",
+    "src/periphery/ZapRouterArc.sol": "33bd972cf216e26cac0388b616b104097b09db3bafa43fea260aaa818b124dcb"
+  },
+  "sourceDependencies": {
+    "openzeppelinContracts": "5fd1781b1454fd1ef8e722282f86f9293cacf256",
+    "uniswapV4Core": "59d3ecf53afa9264a16bba0e38f4c5d2231f80bc",
+    "uniswapV4Periphery": "545a5d2a87228167edde48f3b9eda122d1e3c4d6"
+  },
+  "build": {
+    "solcVersion": "0.8.36+commit.8a079791",
+    "evmVersion": "cancun",
+    "viaIR": true,
+    "optimizer": true,
+    "optimizerRuns": 20000,
+    "metadataBytecodeHash": "none"
+  },
+  "deploymentBlock": 19930758,
+  "deployer": "0x32A935f79ce498aeFF77Acd2F7f35B3aAbC31a2D",
+  "finalFactoryOwner": "0x11113Ab597F0221a5e32c0B23289ad9b4A00b100",
+  "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F",
+  "nativeCurrency": {
+    "name": "USDC",
+    "symbol": "USDC",
+    "decimals": 18
+  },
+  "dependencies": {
+    "poolManager": {
+      "address": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+      "runtimeCodeHash": "0xbd3881180b547f5fe817545743cfb4343e96b1bc6640dcd70c106b0066e95626"
+    },
+    "stateView": {
+      "address": "0xF3334192D15450CdD385c8B70e03f9A6bD9E673b",
+      "runtimeCodeHash": "0x7d9c591e0956fd89d98feb4ffcfe8bf1f7a62bd485edd979fa21d104b49878a6"
+    },
+    "v4Quoter": {
+      "address": "0x8Dc178eFB8111BB0973Dd9d722ebeFF267c98F94",
+      "runtimeCodeHash": "0xd707b1da8cb165e5ea35a3b4450d971eb562ec171e23492aa117036b78a868f6"
+    },
+    "positionManager": {
+      "address": "0x6049c9a0e26405C0985f9E3685C87d0aE917f82B",
+      "runtimeCodeHash": "0x5904204586f0290499c357cfcb99489cdc13740b3cd3f26c735f7ef7f2cff1c5"
+    },
+    "universalRouter": {
+      "address": "0x4fcA4a51Ab4F23A7447b3284fBd7D73289A89Fb1",
+      "runtimeCodeHash": "0x7f949fe75d3483670e17a9ab398a3dc71f285026bba755b48fffd1e42aefad71"
+    },
+    "permit2": {
+      "address": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+      "runtimeCodeHash": "0x05a793d6bdba8b8715c8f4cef0725ec3a961f567d33ebb2d360f541f19f70c8f"
+    },
+    "canonicalStable": {
+      "address": "0x3600000000000000000000000000000000000000",
+      "runtimeCodeHash": "0xc9987bd3af6b26a030951faa7eacc017b68343aeedf3ce5fe68f821c4b93939d"
+    },
+    "create2Deployer": {
+      "address": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+      "runtimeCodeHash": "0x2fa86add0aed31f33a762c9d88e807c475bd51d0f52bd0955754b2608f7e4989"
+    },
+    "usdcImplementation": {
+      "address": "0xC6AD664ac6679F4Ce74e10E91449C93Ec1ae3cA6",
+      "runtimeCodeHash": "0x237a5899a4c4e1c8b60fe7626371778ce8ef0a554350cd92cdf8ae393f59966f"
+    }
+  },
+  "usdcProxy": {
+    "implementation": "0xC6AD664ac6679F4Ce74e10E91449C93Ec1ae3cA6",
+    "admin": "0x9005E53E3ee2f27999F15e7a52C58f804Fc716e0"
+  },
+  "protocolConstants": {
+    "factory": {
+      "minimumPoolLpFeePips": 2000
+    },
+    "vault": {
+      "deadShares": "1000000",
+      "shareFeeBps": 30,
+      "minimumFeeableShares": "334",
+      "bps": 10000,
+      "compoundIntervalSeconds": 600,
+      "compoundSafetyBps": 5000,
+      "deadShareReceiver": "0x000000000000000000000000000000000000dEaD",
+      "positionSalt": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "launch": {
+      "tokenSupply": "1000000000000000000000000000",
+      "initialFdvNativeWei": "5033524916457046939596",
+      "initialLpQuoteWei": "1000000000000000000",
+      "lpFeePips": 10000,
+      "tickSpacing": 200,
+      "startTick": 122000,
+      "launchTickLower": -887200,
+      "launchTickUpper": 122000,
+      "vaultTickLower": -210800,
+      "vaultTickUpper": 395200,
+      "initialSqrtPriceX96": "35313720257181108417245349150782",
+      "bootstrapTargetAmount": "198668155271444303391907",
+      "currency0": "0x0000000000000000000000000000000000000000",
+      "hooks": "0xa790B0e77FD23504342404fc8DD0c5AE4DE4e000",
+      "deadReceiver": "0x000000000000000000000000000000000000dEaD",
+      "positionSalt": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "feeSplitDenominator": 5,
+      "targetCreatorUnits": 2,
+      "targetNavUnits": 3,
+      "counterCreatorUnits": 2,
+      "counterNavUnits": 1,
+      "counterProtocolUnits": 2,
+      "splitRemainderCarry": true,
+      "tokenMetadata": {
+        "nameMinimumUtf8Bytes": 2,
+        "nameMaximumUtf8Bytes": 48,
+        "symbolMinimumUtf8Bytes": 2,
+        "symbolMaximumUtf8Bytes": 10,
+        "urlMaximumUtf8Bytes": 2048,
+        "twitterHandleMaximumBytes": 15,
+        "telegramHandleMaximumBytes": 32
+      }
+    },
+    "launchLiquidityVault": {
+      "nativePayoutGas": 30000
+    },
+    "zapRouter": {
+      "maximumRouteHops": 3,
+      "nativeScale": "1000000000000",
+      "canonicalStableDecimals": 6,
+      "nativeDecimals": 18
+    }
+  },
+  "contracts": {
+    "lpTokenFactory": {
+      "contractName": "LpTokenFactory",
+      "address": "0x37F540de37afE8bDf6C722d87CB019F30e5E406a",
+      "runtimeCodeHash": "0xda7c51858a30203f35398fd836ad32c14c3228fa1abd5012dab87b2986156289",
+      "runtimeCodeSize": 15640,
+      "creationTransactionHash": "0xef35ef60cf60b5f0e8079edcf9e89a404416cd5e931746f2210f6c542eff285b",
+      "creationBlock": 19930758,
+      "sourceCommit": "9ed92f2d61edf9b37c292e3232ac7162d83fae0d",
+      "sourcePath": "src/LpTokenFactory.sol",
+      "sourceSha256": "7537bbab45dcc82dd71610064b6b7ef5fad82b539ac5620df98b86a386537c79",
+      "constructorArguments": {
+        "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+        "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F",
+        "initialOwner": "0x32A935f79ce498aeFF77Acd2F7f35B3aAbC31a2D"
+      }
+    },
+    "lpTokenVaultImplementation": {
+      "contractName": "LpTokenVault",
+      "address": "0x2c692DB9203EF651745AF2c07ebd587222D55a06",
+      "runtimeCodeHash": "0x8752d5cbba2e3aba888dcd399a84301baaa8de29d7ee545612624d7befd6c6ce",
+      "runtimeCodeSize": 23918,
+      "creationTransactionHash": "0xef35ef60cf60b5f0e8079edcf9e89a404416cd5e931746f2210f6c542eff285b",
+      "creationBlock": 19930758,
+      "sourceCommit": "9ed92f2d61edf9b37c292e3232ac7162d83fae0d",
+      "sourcePath": "src/LpTokenVault.sol",
+      "sourceSha256": "dba15bbc3222e2239551a36cca65be8a8fae530af9e829f0510438cc48f3d1a0",
+      "constructorArguments": {
+        "factory": "0x37F540de37afE8bDf6C722d87CB019F30e5E406a",
+        "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951"
+      },
+      "creationKind": "internal"
+    },
+    "tokenLaunchpad": {
+      "contractName": "TokenLaunchpad",
+      "address": "0xa790B0e77FD23504342404fc8DD0c5AE4DE4e000",
+      "runtimeCodeHash": "0x3f34f3bf62b530391e117fe9182b80aa3778872dc927204093a6ccc2d64e1080",
+      "runtimeCodeSize": 23369,
+      "creationTransactionHash": "0x4bc38fe557db5788f423378c5a1fe4387342f98e0130ca7704bfb703fde43ca2",
+      "creationBlock": 19930764,
+      "sourceCommit": "9ed92f2d61edf9b37c292e3232ac7162d83fae0d",
+      "sourcePath": "src/TokenLaunchpad.sol",
+      "sourceSha256": "22a2d9aa766382dc871e7bbb06cca069aef06139f091c6cc652c084086353c42",
+      "constructorArguments": {
+        "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+        "factory": "0x37F540de37afE8bDf6C722d87CB019F30e5E406a",
+        "startTick": 122000,
+        "initialLpQuoteWei": "1000000000000000000"
+      },
+      "creationKind": "create2",
+      "create2Deployer": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+      "create2Salt": "0x000000000000000000000000000000000000000000000000000000000000b9b6"
+    },
+    "launchLiquidityVault": {
+      "contractName": "LaunchLiquidityVault",
+      "address": "0x124ed8F31A4052cA910E98e5eC9bb182C88AB365",
+      "runtimeCodeHash": "0x64af6bdbd18378eef8ad64e73cf7604d15ef0e4e869f8d2f3f31d230f66ff038",
+      "runtimeCodeSize": 11929,
+      "creationTransactionHash": "0x4bc38fe557db5788f423378c5a1fe4387342f98e0130ca7704bfb703fde43ca2",
+      "creationBlock": 19930764,
+      "sourceCommit": "9ed92f2d61edf9b37c292e3232ac7162d83fae0d",
+      "sourcePath": "src/LaunchLiquidityVault.sol",
+      "sourceSha256": "56a5a4fabb66bbe6f727216f024a0c8e754ce668694652141f004d91ecb3e694",
+      "constructorArguments": {
+        "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+        "launchpad": "0xa790B0e77FD23504342404fc8DD0c5AE4DE4e000",
+        "factory": "0x37F540de37afE8bDf6C722d87CB019F30e5E406a"
+      },
+      "creationKind": "internal"
+    },
+    "zapRouter": {
+      "contractName": "ZapRouterArc",
+      "address": "0x905F3AE86108c6A3b1a345dACEaef6c4749Ec66a",
+      "runtimeCodeHash": "0xffcddeae5bc92ea16b8f7f61cb356912fb1a1cd2c41764d41a22fb6a436f5c55",
+      "runtimeCodeSize": 15790,
+      "creationTransactionHash": "0x9539f46f502618b814fd763517cd3355864744ed2e47803a871dd40f00f9b144",
+      "creationBlock": 19930775,
+      "sourceCommit": null,
+      "sourcePath": "src/periphery/ZapRouterArc.sol",
+      "sourceSha256": "33bd972cf216e26cac0388b616b104097b09db3bafa43fea260aaa818b124dcb",
+      "constructorArguments": {
+        "factory": "0x37F540de37afE8bDf6C722d87CB019F30e5E406a"
+      },
+      "sourceStatus": "uncommitted-working-tree-at-deployment"
+    },
+    "lpTokenLens": {
+      "contractName": "LpTokenLens",
+      "address": "0x5dfA75b0185efBaEF286E80B847ce84ff8a62C2d",
+      "runtimeCodeHash": "0x23f3b5cad1a697620df4b5b520d9e037c321eca90322c8c1a049ef1ad2add5ef",
+      "runtimeCodeSize": 6890,
+      "creationTransactionHash": "0x3ad318c311442c9d3c09a65839a2f6429297dccabc676adec5963193c3d7ed2a",
+      "creationBlock": 19930780,
+      "sourceCommit": "9ed92f2d61edf9b37c292e3232ac7162d83fae0d",
+      "sourcePath": "src/periphery/LpTokenLens.sol",
+      "sourceSha256": "f69ef6dcd10cec05d031d2a7964937a2ed44ef84a1158aafea6328a86585fe88",
+      "constructorArguments": {}
+    }
+  },
+  "configurationTransactions": {
+    "bindLaunchpad": {
+      "transactionHash": "0x0c02774c2dbd855180c03a02d1f71c7175ab387f640f8d90ebaa3db0765ea220",
+      "block": 19930770,
+      "factory": "0x37F540de37afE8bDf6C722d87CB019F30e5E406a",
+      "launchpad": "0xa790B0e77FD23504342404fc8DD0c5AE4DE4e000"
+    },
+    "transferFactoryOwnership": {
+      "transactionHash": "0x637a3e1f9451db027c80240e423348d27d384e0c42b4b948a3d2546b9191457b",
+      "block": 19930785,
+      "previousOwner": "0x32A935f79ce498aeFF77Acd2F7f35B3aAbC31a2D",
+      "newOwner": "0x11113Ab597F0221a5e32c0B23289ad9b4A00b100"
+    }
+  },
+  "verifiedWiring": {
+    "factory": {
+      "MIN_POOL_LP_FEE": 2000,
+      "launchpad": "0xa790B0e77FD23504342404fc8DD0c5AE4DE4e000",
+      "owner": "0x11113Ab597F0221a5e32c0B23289ad9b4A00b100",
+      "pendingTreasury": "0x0000000000000000000000000000000000000000",
+      "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+      "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F",
+      "vaultCount": "0",
+      "vaultImplementation": "0x2c692DB9203EF651745AF2c07ebd587222D55a06"
+    },
+    "lpTokenVaultImplementation": {
+      "BPS": "10000",
+      "COMPOUND_INTERVAL": "600",
+      "COMPOUND_SAFETY_BPS": "5000",
+      "DEAD_SHARES": "1000000",
+      "DEAD_SHARE_RECEIVER": "0x000000000000000000000000000000000000dEaD",
+      "MIN_FEEABLE_SHARES": "334",
+      "PERMIT2": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+      "POSITION_SALT": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "SHARE_FEE_BPS": "30",
+      "factory": "0x37F540de37afE8bDf6C722d87CB019F30e5E406a",
+      "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+      "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F"
+    },
+    "tokenLaunchpad": {
+      "LP_FEE": 10000,
+      "TICK_SPACING": 200,
+      "TOKEN_SUPPLY": "1000000000000000000000000000",
+      "bootstrapTargetAmount": "198668155271444303391907",
+      "factory": "0x37F540de37afE8bDf6C722d87CB019F30e5E406a",
+      "getTokenCount": "0",
+      "initialFdvNative": "5033524916457046939596",
+      "initialLpQuote": "1000000000000000000",
+      "initialSqrtPriceX96": "35313720257181108417245349150782",
+      "liquidityVault": "0x124ed8F31A4052cA910E98e5eC9bb182C88AB365",
+      "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+      "poolTicks": [
+        122000,
+        -887200,
+        122000
+      ],
+      "startTick": 122000,
+      "poolKeySample": {
+        "currency0": "0x0000000000000000000000000000000000000000",
+        "currency1": "0x0000000000000000000000000000000000000001",
+        "fee": 10000,
+        "tickSpacing": 200,
+        "hooks": "0xa790B0e77FD23504342404fc8DD0c5AE4DE4e000"
+      }
+    },
+    "launchLiquidityVault": {
+      "NATIVE_PAYOUT_GAS": "30000",
+      "POSITION_SALT": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "factory": "0x37F540de37afE8bDf6C722d87CB019F30e5E406a",
+      "launchpad": "0xa790B0e77FD23504342404fc8DD0c5AE4DE4e000",
+      "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+      "treasury": "0x628094CFe55375240cda657c2f12766B3BA1a68F"
+    },
+    "zapRouter": {
+      "MAX_ROUTE_HOPS": "3",
+      "USDC": "0x3600000000000000000000000000000000000000",
+      "canonicalStable": "0x3600000000000000000000000000000000000000",
+      "factory": "0x37F540de37afE8bDf6C722d87CB019F30e5E406a",
+      "poolManager": "0x8366a39CC670B4001A1121B8F6A443A643e40951",
+      "version": "2.0-arc",
+      "wrappedNative": "0x3600000000000000000000000000000000000000"
+    }
+  },
+  "receiptSummary": {
+    "transactionCount": 6,
+    "allSucceeded": true,
+    "totalGasUsed": "21581930",
+    "totalPaidWei": "431638600000000000",
+    "totalPaidNative": "0.4316386",
+    "nativeSymbol": "USDC",
+    "transactions": [
+      {
+        "nonce": 0,
+        "transactionHash": "0xef35ef60cf60b5f0e8079edcf9e89a404416cd5e931746f2210f6c542eff285b",
+        "block": 19930758,
+        "blockHash": "0x0e38eec02749f4db400656ddd7d427077cf032f5f190bded845dd911a1fce3ca",
+        "gasUsed": "8649911",
+        "effectiveGasPriceWei": "20000000000",
+        "paidWei": "172998220000000000"
+      },
+      {
+        "nonce": 1,
+        "transactionHash": "0x4bc38fe557db5788f423378c5a1fe4387342f98e0130ca7704bfb703fde43ca2",
+        "block": 19930764,
+        "blockHash": "0x092b15b911e54c2feb585f6fd19ce3735361994e76e8ff3d62956a1e108347c2",
+        "gasUsed": "7846784",
+        "effectiveGasPriceWei": "20000000000",
+        "paidWei": "156935680000000000"
+      },
+      {
+        "nonce": 2,
+        "transactionHash": "0x0c02774c2dbd855180c03a02d1f71c7175ab387f640f8d90ebaa3db0765ea220",
+        "block": 19930770,
+        "blockHash": "0x087b180910162eafeb6a7f1e521aac4de3798e90f4fc2981c04782d72bd79878",
+        "gasUsed": "60528",
+        "effectiveGasPriceWei": "20000000000",
+        "paidWei": "1210560000000000"
+      },
+      {
+        "nonce": 3,
+        "transactionHash": "0x9539f46f502618b814fd763517cd3355864744ed2e47803a871dd40f00f9b144",
+        "block": 19930775,
+        "blockHash": "0xbbb606fa4e7ce53e0963e5091f42923b1079ecacb118694b101d7bfd26b11d59",
+        "gasUsed": "3462879",
+        "effectiveGasPriceWei": "20000000000",
+        "paidWei": "69257580000000000"
+      },
+      {
+        "nonce": 4,
+        "transactionHash": "0x3ad318c311442c9d3c09a65839a2f6429297dccabc676adec5963193c3d7ed2a",
+        "block": 19930780,
+        "blockHash": "0x1be14e6380bc1a1c35e40cc83fd3c3659dae78fe397b0abdfba3b63fe5426eb9",
+        "gasUsed": "1533025",
+        "effectiveGasPriceWei": "20000000000",
+        "paidWei": "30660500000000000"
+      },
+      {
+        "nonce": 5,
+        "transactionHash": "0x637a3e1f9451db027c80240e423348d27d384e0c42b4b948a3d2546b9191457b",
+        "block": 19930785,
+        "blockHash": "0x69616f59ac923cb1c4af897100333b9e15d293173315556d8ec8c6e2d620578a",
+        "gasUsed": "28803",
+        "effectiveGasPriceWei": "20000000000",
+        "paidWei": "576060000000000"
+      }
+    ]
+  },
+  "sourceNote": "Legacy contract sources match baseSourceCommit. Arc-specific sources were not committed at deployment; sourceSha256 identifies their exact bytes. A null sourceCommit does not attribute these sources to the legacy commit. Source commit identifiers refer to the originating repository; use the file hashes to check this public snapshot.",
+  "verification": {
+    "reviewedAt": "2026-09-09T07:21:01.809932+00:00",
+    "block": 19931148,
+    "blockHash": "0x1889989a0d0f7e6ffe4d61a6f8b306c9fac51b3650c771c7834be002c0841ce0",
+    "transactionChecks": "All six signed transactions match the prepared payloads, nonce, sender, chain, recipient, zero value, gas limit, 40-gwei max fee and zero priority fee. Successful receipts match their canonical block headers and inclusion.",
+    "runtimeChecks": "All six deployed runtime programs match the compiled artifacts after masking only compiler-declared immutable slots. Public immutable and configuration getters match the reviewed deployment parameters.",
+    "dependencyChecks": "All nine pinned dependency runtime hashes and both legacy USDC proxy slots match the reviewed config.",
+    "constantsEvidence": "Public getter values are recorded under verifiedWiring. Vault boundary ticks, fee split policy, metadata limits and Arc nativeScale are source-derived from the matched compiled programs; these are not direct getter reads.",
+    "poolKeyEvidence": "poolKey(address(1)) returned native currency0, fee 10000, spacing 200 and the deployed launchpad hook. This read is a template check, not a mined token launch.",
+    "explorerSourceVerification": "not-performed"
+  },
+  "preparation": {
+    "configPath": "config/arc-mainnet.json",
+    "configSha256": "99b684d4ac903cf32dabc8b7e8288d4616a6d94271e0563575b2677612861945",
+    "scriptPath": "script/DeployLpTokenArc.s.sol",
+    "scriptSha256": "0f0de0d8c42a9bfabafab5d824c7526f12025b07f6ae1dfac9ed67f3ea778186"
+  }
+}

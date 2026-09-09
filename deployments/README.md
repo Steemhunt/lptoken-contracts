@@ -30,3 +30,23 @@ original receipt.
 The checked-in mainnet configs pin the approved initial treasury and reviewed chain
 dependencies. Each deployment must produce a chain-specific manifest from its confirmed
 receipts.
+
+## Arc mainnet
+
+[`arc-mainnet.json`](arc-mainnet.json) records the September 9, 2026 deployment on
+chain 5042. Its periphery is `ZapRouterArc`; `wrappedNative()` identifies the
+six-decimal USDC ERC-20 interface for ABI compatibility and does not identify a
+WETH9 wrapper. Native transfers, launch seeds, and receipt fees use 18-decimal USDC.
+
+This public record retains confirmed addresses, transaction hashes, receipts,
+constructor parameters, dependency pins, source hashes, and observed wiring.
+Provider credentials, local paths, unsigned execution plans, and internal
+application activation notes are not part of this snapshot. Getter observations
+are pinned to `verification.block` and are not a claim about current chain state.
+
+Arc-specific source files were uncommitted when deployed. Their `sourceCommit`
+remains null; `sourceSha256` identifies the exact included source. Commit IDs refer
+to the originating repository and need not exist in this public clone. The
+preparation hashes identify the included config and Solidity deployment script.
+Explorer source verification and a mainnet token-trading round trip are not
+established by the recorded receipt and runtime checks.
