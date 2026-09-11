@@ -186,21 +186,21 @@ retain their existing source references.
 
 ## ETHOnline 2026
 
-This repository is a Continuity Track submission to ETHOnline 2026, which ran from
+This repository is a Continuity Track submission to ETHOnline 2026, which runs from
 September 4 to 16, 2026.
 
 **Before the event.** The contracts were developed in the private lpTOKEN.fun
 repository and published here on September 2, 2026 in
 [`a9df830`](https://github.com/Steemhunt/lptoken-contracts/commit/a9df830f3c13daee3926afa32eb48cd7c9e2d3e5).
-That commit holds the core contracts, the test suite, CI, and the Robinhood Chain and
-Base deployments, which were already live.
+That commit holds the core contracts, the test suite, CI, and the deployment records for
+Robinhood Chain and Base, which were already live.
 
 **During the event.**
 
 - Arc mainnet support, in
   [`edac3a1`](https://github.com/Steemhunt/lptoken-contracts/commit/edac3a1600a4ed613479cc3d5bc047f58cc83b96):
   `ZapRouterArc`, the Arc deployment script and config, the receipt-backed Arc
-  manifest, and the Arc zap and deployment tests. These were written in the private
+  manifest, and the Arc zap and deployment tests. These were committed to the private
   repository and published here the same day. The Arc deployment landed on
   September 9, 2026, in blocks 19930758 to 19930785.
 - Arc support in the lpTOKEN.fun app and indexer, in the private repository.

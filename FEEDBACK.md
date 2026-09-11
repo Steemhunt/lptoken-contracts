@@ -1,7 +1,7 @@
 # Uniswap v4 developer feedback
 
-Notes from building lpTOKEN on Uniswap v4 and bringing the same contracts to Arc mainnet
-during ETHOnline 2026. Each point says what we ran into and where it shows up in this
+Notes from building lpTOKEN on Uniswap v4 before ETHOnline 2026, and from bringing its core
+contracts to Arc mainnet during the event. Each point says what we ran into and where it shows up in this
 repository. Facts about external docs were checked on September 11, 2026.
 
 ## 1. Native currency is not always ETH
@@ -15,7 +15,7 @@ What this meant for us:
 - `ZapRouter` expects a WETH9 style `deposit` and `withdraw`. On Arc we shipped a
   separate [`ZapRouterArc`](src/periphery/ZapRouterArc.sol) that converts between the
   two units instead. The shared core contracts stayed unchanged.
-- The guidance we found disagrees on which USDC a pool should use. Arc's general AMM
+- The sources we found differ on which USDC a pool should use. Arc's general AMM
   guidance points to the ERC-20. Uniswap's Arc Instant Launch builds native USDC pools.
   We went with native USDC, partly because 6 decimals round badly on very small amounts.
 
@@ -35,7 +35,8 @@ sentence there would help anyone building a similar gate.
 
 ## 3. Deployment blocks on the deployments page
 
-Reproducible fork runs in this repository pin `FORK_BLOCK_NUMBER` on an archive node, and
-that block has to come after PoolManager, Universal Router and Permit2 exist on the chain.
+Reproducible fork runs in this repository pin `FORK_BLOCK_NUMBER` on an archive node. That
+block has to come after every v4 contract and token that [`test/test-fork.sh`](test/test-fork.sh)
+checks for, including PoolManager, Universal Router and Permit2.
 The v4 deployments page lists addresses only, so those blocks have to be found elsewhere. A
 deployment block column would help. Arc is not on the page yet either.
