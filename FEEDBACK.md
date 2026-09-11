@@ -1,8 +1,8 @@
 # Uniswap v4 developer feedback
 
 Notes from building lpTOKEN on Uniswap v4 before ETHOnline 2026, and from bringing its core
-contracts to Arc mainnet during the event. Each point says what we ran into and where it shows up in this
-repository. Facts about external docs were checked on September 11, 2026.
+contracts to Arc mainnet during the event. Each point says what we ran into and where it
+shows up in this repository. Facts about external docs were checked on September 11, 2026.
 
 ## 1. Native currency is not always ETH
 
@@ -30,8 +30,10 @@ v4 skips a hook's callbacks when the hook itself is the caller. Our whole initia
 gate depends on that rule.
 
 We found the rule only as a one-line comment on the `noSelfCall` modifier in `Hooks.sol`
-and in an archived library reference page. The hooks concepts page does not mention it. A
-sentence there would help anyone building a similar gate.
+and on the former Hooks library reference page at
+`/contracts/v4/reference/core/libraries/Hooks`, which now redirects to the hooks concepts
+page. The concepts page does not mention it. A sentence there would help anyone building a
+similar gate.
 
 ## 3. Deployment blocks on the deployments page
 
