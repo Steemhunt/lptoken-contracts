@@ -186,8 +186,8 @@ retain their existing source references.
 
 ## ETHOnline 2026
 
-This repository is a Continuity Track submission to ETHOnline 2026, which runs from
-September 4 to 16, 2026.
+This repository is part of the lpTOKEN.fun Continuity Track submission to ETHOnline 2026,
+which runs from September 4 to 16, 2026.
 
 **Before the event.** The contracts were developed in the private lpTOKEN.fun
 repository and published here on September 2, 2026 in
