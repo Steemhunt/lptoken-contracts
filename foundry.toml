@@ -10,6 +10,10 @@ optimizer = true
 optimizer_runs = 20_000
 via_ir = true
 bytecode_hash = "none"
+# Foundry 1.8 runs each top-level test call as its own transaction (isolate mode), which
+# more than doubles the gas of the 43-day compound throughput replays. The heaviest
+# replay needs about 1.44e9, so 2^31 leaves room; the 2^30 default fails it.
+gas_limit = "2147483648"
 fs_permissions = [
     { access = "read", path = "./out" },
     { access = "read", path = "./config" },

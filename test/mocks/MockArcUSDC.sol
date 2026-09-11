@@ -73,9 +73,9 @@ contract MockArcUSDC is IERC20Metadata {
     }
 }
 
-    /// @dev Created and destroyed in the same transaction, bypassing native receive hooks.
-    contract ArcUSDCForceSend {
-        constructor(address payable recipient) payable {
-            selfdestruct(recipient);
-        }
+/// @dev Created and destroyed in the same transaction, bypassing native receive hooks.
+contract ArcUSDCForceSend {
+    constructor(address payable recipient) payable {
+        selfdestruct(recipient);
     }
+}

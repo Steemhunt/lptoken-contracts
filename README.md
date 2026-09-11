@@ -110,7 +110,7 @@ with **no oracle, USD numeraire, or pool-wide reserve assumption anywhere**.
   round-trip manipulation strictly loses; admission snapshots are re-checked after
   bootstrap transfers so callback-capable assets cannot invalidate them; forced ETH
   and direct donations accrue to existing holders and can never mint shares.
-- **Adversarial test suite** — 333 non-fork tests plus mainnet-fork dry runs against
+- **Adversarial test suite** — 323 non-fork tests plus mainnet-fork dry runs against
   the production `PoolManager` artifact (compiled with Uniswap's optimizer profile,
   not a mock). Highlights: `CompoundCapInsiderAttack` proves a launch creator armed
   with JIT liquidity and 1.1×–10,000× price swings loses on every round trip;
@@ -213,7 +213,7 @@ git clone --recursive https://github.com/Steemhunt/lptoken-contracts.git
 cd lptoken-contracts
 
 forge build
-./test/test-all.sh        # 333 non-fork tests
+./test/test-all.sh        # 323 non-fork tests
 forge fmt --check
 ```
 
